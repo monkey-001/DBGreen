@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DBConfig>
+    <dbVersion value='1' />
+    <dbName value='green.db' />
+    <tables>
+        <table class="com.example.dbgreen.tables.UserTable1" />
+        <table class="com.example.dbgreen.tables.UserTable2" />
+        <table class="com.example.dbgreen.tables.UserTable3" />
+        <table class="com.example.dbgreen.tables.UserTable4" />
+    </tables>
+</DBConfig>
