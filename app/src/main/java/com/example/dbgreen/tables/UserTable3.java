@@ -12,10 +12,8 @@ import java.util.UUID;
 /**
  * Created by LEE on 2021-09-08
  */
-public class UserTable3 extends TableBase {
-    @TableName(version = 3)
-    private String tableName = "user3";
-
+@TableName(version = 3, name = "user3")
+public class UserTable3 extends TableBase{
     @Column(notNull = true, defaultValue = "王五")
     private String userName;
 
@@ -35,14 +33,6 @@ public class UserTable3 extends TableBase {
         ParcelUuid fromParcel = ParcelUuid.CREATOR.createFromParcel(Parcel.obtain());
         UUID uuid = fromParcel.getUuid();
         return uuid.toString();
-    }
-
-    public String getTableName() {
-        return tableName;
-    }
-
-    public void setTableName(String tableName) {
-        this.tableName = tableName;
     }
 
     public String getUserName() {

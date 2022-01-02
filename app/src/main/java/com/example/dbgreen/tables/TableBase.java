@@ -22,6 +22,6 @@ public class TableBase extends DBTableFormat {
 
     @Override
     public ContentValues formatContentValues() {
-        return new ContentValues();
+        return null;
     }
 }

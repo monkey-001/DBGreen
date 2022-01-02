@@ -1,6 +1,8 @@
 package com.example.dbgreen.tables;
 
+import android.content.ContentValues;
 import android.database.Cursor;
+import android.text.TextUtils;
 
 import com.green.DBGreen.annotations.Column;
 import com.green.DBGreen.annotations.TableName;
@@ -9,10 +11,8 @@ import com.green.DBGreen.interfaces.DBTableFormat;
 /**
  * Created by LEE on 2021-09-08
  */
+@TableName(name = "user2")
 public class UserTable2 extends TableBase {
-    @TableName
-    private String tableName = "user2";
-
     @Column(notNull = true, defaultValue = "李四")
     private String userName;
 
@@ -21,14 +21,6 @@ public class UserTable2 extends TableBase {
 
     @Column(notNull = true, defaultValue = "18", version = 2, check = "(age > 17)")
     private int age;
-
-    public String getTableName() {
-        return tableName;
-    }
-
-    public void setTableName(String tableName) {
-        this.tableName = tableName;
-    }
 
     public String getUserName() {
         return userName;
@@ -64,5 +56,14 @@ public class UserTable2 extends TableBase {
         if (index != -1) {
             userTable2.setAge(cursor.getInt(index));
         }
+    }
+
+    @Override
+    public ContentValues formatContentValues() {
+        ContentValues contentValues = new ContentValues();
+        if (!TextUtils.isEmpty(userID)) {
+            contentValues.put("userID", userID);
+        }
+        return contentValues;
     }
 }

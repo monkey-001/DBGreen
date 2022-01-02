@@ -38,4 +38,6 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
 
     implementation (name: 'DBGreen-release', ext: 'aar')
+    annotationProcessor (name: 'DBGreen-release', ext: 'aar')
+    api 'org.jetbrains:annotations:21.0.1'
 }
